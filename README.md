@@ -8,7 +8,18 @@ Welcome to Carpe Vinum -  the open source tool for wine lovers to connect, track
 
 At the time this test is written, the datamodel associated with this application is partially developed. However, a wine app without wines in the database is not much of a wine app! This challenge will focus on backend development with regards to efficient data processing and modeling. There is also the opportunity to show some flair by using interesting datastore solutions to solve the problem at hand. Before reading the rest of the challenge, it may be benefitial to jump to the "Setup" section to begin getting familiar with the development environment.
 
-Now, for the actual challenge. Assume there's exists a service that can callback in the form of a webhook when new data becomes available. These webhooks will callback with an image of a wine bottle/label. As such, we must gather data from the image to add new content to the database. For the purposes of this challenge, the candidate can use whatever images they choose. We recommend those from the [LCBO](http://www.lcbo.com/content/lcbo/en.html#.XEpE6M9KjUY) website. In any case, tests can be written with mock images to verify the correctness of the solution. 
+In a high level overview, this is a fullstack challenge where you have to work in both backend and frontend to complete the app. You must fill the datamodel CRUD operations in the graphql schema and do any necessary code to have them working.
+
+Now, for the actual challenge. When you create a wine, we can attach an image of the wine bottle. The idea here is to prepoluate the wine data just uploading an image of a wine bottle/image. If this is too hard to complete, then complete the wine crud as a simple crud with manually inputing the data, but the main challenge here is to process an image of a wine bottle and prepoluate the wine form with the data from the image, and then submit the form. Assume there's exists a service that can callback in the form of a webhook when new data becomes available. For the purposes of this challenge, the candidate can use whatever images they choose. We recommend those from the [LCBO](http://www.lcbo.com/content/lcbo/en.html#.XEpE6M9KjUY) website. To be more specifci, you can use some sort of OCR reading package to get the data. You can use any image you wish, there is a website link that you can get images from to give you some ideas. It would be fun if it was the picture of a wine label, but as I said. Choose any image yo want for this.
+
+Here is an example of a javascript package that could be used.
+
+http://tesseract.projectnaptha.com/
+
+But, this is up to you. We want to give the freedom of package selection flexible. Any package / solution that can be used as a proof of concept is more than acceptable.
+
+
+In any case, tests can be written with mock images to verify the correctness of the solution. 
 
 Before continuing, consider the following items.
 - The current datamodel can be found at `./database/datamodel.graphql`. Although it has some structure, the wine type is still lacking. It does not have an image associate with it and may lack some of the features that could be available directly on a wine bottle or label.
